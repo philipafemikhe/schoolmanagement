@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    School Management System
                 </div>
 
                 <div class="links">
@@ -92,7 +92,15 @@
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> -->
-                    <h2>Welcome to Ia2ztech School Management System</h2>
+                    <p>
+                        Powered by Ia2ztech
+                    </p>
+                    <?php
+                        $users = App\User::all();
+                    ?>
+                    @if(count($users) == 0)
+                        <a href="{{url('/setup/database')}}">Initialize Database</a>
+                    @endif
                 </div>
             </div>
         </div>

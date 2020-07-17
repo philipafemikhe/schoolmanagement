@@ -75,6 +75,23 @@
                             </div>
                         </div>
 
+                        <?php
+                            $admins = App\User::where('user_type','admin')->get();
+                        ?>
+                        @if(count($admins) <=0 )
+                            <div class="form-group row">
+                                <label for="userType" class="col-md-4 col-form-label text-md-right">{{ __('User Type') }}</label>
+
+                                <div class="col-md-6">
+                                    <select id="userType" class="form-control" name="userType" required>
+                                        <option value="null">Select one</option>
+                                        <option value="student">Student</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                        @endif
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

@@ -28,7 +28,13 @@
                                 @endforeach
                             </table>
                         </div>
+                    @else
+                        Empty list
                    @endif
+
+                    @if(count($registeredCourses) ==0)
+                        Empty list
+                    @endif
                 </div>
             </div>
         </div>

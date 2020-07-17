@@ -9,9 +9,11 @@
 
                 <div class="card-body">
                     @if(!is_null($registeredStudents))
+                    <?php $i =0; ?>
                         @foreach($registeredStudents as $student)
-                            <div class="table-responsive">
-                                <div class="badge primary">{{$student->name}}</div>
+                            <?php $i++; ?>
+                            <div class="table-responsive" style="margin-bottom: 3em">
+                                <div style="background-color: #fafafc; color: #333"><b>{{$i}} : {{$student->name}}</b></div>
                                 @if(!is_null($student->studentCourses))  
                                     <table class="table-striped" cellpadding="10"> 
                                     <thead>

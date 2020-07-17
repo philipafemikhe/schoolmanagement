@@ -64,12 +64,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $uType="student";
+        $anyAdmin = User::where('user_type', 'admin')->get();
+        if(count($anyAdmin) == 0) $anyAdmin = "admin";
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'class' => $data['className'],
-            'user_type' => 'student',
+            'user_type' => $anyAdmin,
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\StudentCourses;
+use DB;
 
 class HomeController extends Controller
 {
@@ -32,4 +33,6 @@ class HomeController extends Controller
         $registeredStudents = User::where('user_type', 'student')->with('studentCourses')->get();
         return view('registered_students', compact('registeredStudents'));
     }
+
+    
 }

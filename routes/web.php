@@ -33,3 +33,5 @@ Route::get('/course/view/student/{id}', 'CourseController@getStudentCourses');
 
 
 Route::get('/profile/view', 'UserController@profile');
+
+Route::get('/setup/database', 'UserController@setupDatabase');
