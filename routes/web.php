@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/registration/view', 'HomeController@registeredList');
+
+
+Route::get('/course/add', 'CourseController@getAddForm');
+Route::post('/course/add', 'CourseController@add');
+
+Route::get('/course/register', 'CourseController@register');
+Route::post('/course/register/save', 'CourseController@saveRegisteredCourses');
+
+
+Route::get('/course/view', 'CourseController@index');
+Route::get('/course/view/student/{id}', 'CourseController@getStudentCourses');
+
+
+Route::get('/profile/view', 'UserController@profile');

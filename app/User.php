@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
      public function studentCourses(){
-         return $this->hasMany('App\StudentCourses');
+         return $this->hasMany('App\StudentCourses', 'student_id', 'id');
     }
 }
